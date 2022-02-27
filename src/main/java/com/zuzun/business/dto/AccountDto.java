@@ -1,4 +1,4 @@
-package com.zuzun.dto;
+package com.zuzun.business.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ public class AccountDto {
     public String tcNo;
     public String phone;
     public String birthday;
+    public Long salary;
 
 
 }
-

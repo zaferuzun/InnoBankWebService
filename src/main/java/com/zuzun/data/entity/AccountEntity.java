@@ -1,4 +1,4 @@
-package com.zuzun.entity;
+package com.zuzun.data.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,6 +41,9 @@ public class AccountEntity implements Serializable {
 
     @Column(name = "tc_no")
     private String TcNo;
+
+    @Column(name = "salary")
+    private Long salary;
 
     @Column(name = "birthday")
     private Date birthday;

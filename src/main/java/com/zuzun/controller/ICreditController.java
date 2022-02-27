@@ -1,6 +1,6 @@
 package com.zuzun.controller;
 
-import com.zuzun.dto.AccountDto;
+import com.zuzun.business.dto.AccountDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

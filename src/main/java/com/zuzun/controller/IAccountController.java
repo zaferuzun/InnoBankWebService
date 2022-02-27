@@ -1,12 +1,13 @@
 package com.zuzun.controller;
 
 
-import com.zuzun.dto.AccountDto;
+import com.zuzun.business.dto.AccountDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 public interface IAccountController {
+    //Aylık gelir bilgisi
 
     @GetMapping("/{id}")
     ResponseEntity<AccountDto> getAccountById(@PathVariable int id)
@@ -20,7 +21,6 @@ public interface IAccountController {
 
     @DeleteMapping("/delete/{id}")
     ResponseEntity<AccountDto> deleteAccount (@PathVariable int id)throws Exception;
-    //Aylık gelir bilgisi
-    
+
 
 }

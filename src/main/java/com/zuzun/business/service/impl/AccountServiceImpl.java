@@ -1,16 +1,14 @@
-package com.zuzun.service.impl;
+package com.zuzun.business.service.impl;
 
-import com.zuzun.dto.AccountDto;
-import com.zuzun.entity.AccountEntity;
-import com.zuzun.repository.IAccountRepository;
-import com.zuzun.service.IAccountService;
+import com.zuzun.business.dto.AccountDto;
+import com.zuzun.business.service.IAccountService;
+import com.zuzun.data.entity.AccountEntity;
+import com.zuzun.data.repository.IAccountRepository;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -36,10 +34,19 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
-    public ResponseEntity<AccountDto> updateAccount(AccountDto accountDto,int id) {
+    public ResponseEntity<AccountDto> updateAccount(AccountDto accountDto, int id) throws Exception {
+        AccountEntity accountEntity = DtoToEntity(accountDto);//ModelMapper
 
+        AccountEntity account = iAccountRepository.findById(id)
+                .orElseThrow(() -> new Exception("Employee not exist with id :" + id));
 
-        return null;
+        account.setBirthday( accountEntity.getBirthday());
+        account.setSalary(accountEntity.getSalary());
+        account.setPhone(accountEntity.getPhone());
+
+        AccountEntity updatedAccount = iAccountRepository.save(account);
+        AccountDto accountDto1 = EntityToDto(updatedAccount);//model
+        return ResponseEntity.ok(accountDto1);
     }
 
     @Override
@@ -63,4 +70,5 @@ public class AccountServiceImpl implements IAccountService {
         AccountEntity accountEntity = modelMapper.map(accountDto, AccountEntity.class);
         return accountEntity;
     }
+
 }

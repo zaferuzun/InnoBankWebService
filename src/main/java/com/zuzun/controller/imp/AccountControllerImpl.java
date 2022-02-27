@@ -1,8 +1,8 @@
 package com.zuzun.controller.imp;
 
 import com.zuzun.controller.IAccountController;
-import com.zuzun.dto.AccountDto;
-import com.zuzun.service.IAccountService;
+import com.zuzun.business.dto.AccountDto;
+import com.zuzun.business.service.IAccountService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.zuzun.service;
+package com.zuzun.business.service;
 
-import com.zuzun.dto.AccountDto;
-import com.zuzun.entity.AccountEntity;
+import com.zuzun.business.dto.AccountDto;
+import com.zuzun.data.entity.AccountEntity;
 import org.springframework.http.ResponseEntity;
 
 public interface IAccountService {
@@ -10,7 +10,7 @@ public interface IAccountService {
 
     ResponseEntity<AccountDto> saveAccount(AccountDto accountDto);
 
-    ResponseEntity<AccountDto> updateAccount(AccountDto accountDto,int id);
+    ResponseEntity<AccountDto> updateAccount(AccountDto accountDto,int id) throws Exception;
 
     ResponseEntity<AccountDto> deleteAccount(int id);
 

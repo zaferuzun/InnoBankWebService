@@ -1,6 +1,6 @@
-package com.zuzun.repository;
+package com.zuzun.data.repository;
 
-import com.zuzun.entity.AccountEntity;
+import com.zuzun.data.entity.AccountEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

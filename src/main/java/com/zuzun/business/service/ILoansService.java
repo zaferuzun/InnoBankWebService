@@ -22,4 +22,6 @@ public interface ILoansService {
     LoansEntity DtoToEntity(LoansDto loansDto);
     LoansModel loansCalculated(String loansType, LoansParameterModel loansParameterModel) throws Exception;
 
+    ResponseEntity<LoansDto> getLoansByAccountId(int id);
+
 }

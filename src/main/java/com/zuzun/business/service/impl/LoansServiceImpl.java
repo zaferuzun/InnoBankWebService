@@ -111,4 +111,10 @@ public class LoansServiceImpl implements ILoansService {
 
     }
 
+    @Override
+    public ResponseEntity<LoansDto> getLoansByAccountId(int id) {
+        LoansEntity loansEntity = iLoansRepository.getLoansEntityByAccountId(id);
+        return ResponseEntity.ok(EntityToDto(loansEntity));
+    }
+
 }

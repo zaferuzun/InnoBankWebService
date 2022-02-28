@@ -43,4 +43,11 @@ public class LoansControllerImpl implements ILoansController {
     public ResponseEntity<LoansDto> deleteLoans(int id) throws Exception {
         return iLoansService.deleteLoans(id);
     }
+
+    @Override
+    public ResponseEntity<LoansDto> getLoansByAccountId(int id) throws Exception {
+        return iLoansService.getLoansByAccountId(id);
+    }
+
+
 }

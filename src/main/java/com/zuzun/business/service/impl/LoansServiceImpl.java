@@ -78,8 +78,6 @@ public class LoansServiceImpl implements ILoansService {
         return null;
     }
 
-
-    ////////////////////////////////////
     //Model Mapper Entity ==> Dto
     @Override
     public LoansDto EntityToDto(LoansEntity loansEntity) {
@@ -94,6 +92,7 @@ public class LoansServiceImpl implements ILoansService {
         return loansEntity;
     }
 
+    //loans calculation
     @Override
     public LoansModel loansCalculated(String loansType,LoansParameterModel loansParameterModel) throws Exception {
 

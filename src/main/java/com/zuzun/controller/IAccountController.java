@@ -22,5 +22,8 @@ public interface IAccountController {
     @DeleteMapping("/delete/{id}")
     ResponseEntity<AccountDto> deleteAccount (@PathVariable int id)throws Exception;
 
+    @PostMapping("")
+    ResponseEntity<AccountDto> getAccountByTcNo (@RequestParam String tcNo)throws Exception;
+
 
 }

@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AccountDto {
 
-    public int id;
-    public String name;
-    public String surname;
-    public String tcNo;
-    public String phone;
-    public String birthday;
-    public Long salary;
+    private int id;
+    private String name;
+    private String surname;
+    private String tcNo;
+    private String phone;
+    private String birthday;
+    private Long salary;
 
 
 }

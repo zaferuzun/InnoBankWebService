@@ -10,7 +10,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 
@@ -21,32 +20,25 @@ import java.util.Date;
 @Log4j2
 
 @Entity
-@Table(name = "account")
-public class AccountEntity implements Serializable {
-
+@Table(name = "loans")
+public class LoansEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id",nullable = false,updatable = false)
     private int id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "account_id")
+    private int accountId;
 
-    @Column(name = "surname")
-    private String surname;
+    @Column(name = "amount")
+    private Long amount;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "type")
+    private String type;
 
-    @Column(name = "tc_no")
-    private String tcNo;
-
-    @Column(name = "salary")
-    private Long salary;
-
-    @Column(name = "birthday")
-    private Date birthday;
+    @Column(name = "approval")
+    private Boolean approval;
 
     @Column(name = "created_date",nullable = false,updatable = false)
     @CreatedDate

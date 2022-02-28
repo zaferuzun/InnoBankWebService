@@ -14,6 +14,8 @@ public interface IAccountService {
 
     ResponseEntity<AccountDto> deleteAccount(int id);
 
+    ResponseEntity<AccountDto> getAccountByTcNo(String tcNo);
+
     AccountDto EntityToDto(AccountEntity accountEntity);
     AccountEntity DtoToEntity(AccountDto accountDto);
 

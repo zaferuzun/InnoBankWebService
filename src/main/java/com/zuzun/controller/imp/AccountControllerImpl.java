@@ -12,30 +12,36 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/account")
 @RequiredArgsConstructor
 public class AccountControllerImpl implements IAccountController {
-    private final @NonNull IAccountService accountService;
+    private final @NonNull IAccountService iAccountService;
 
     // http://localhost:8080/api/account/{id}
     @Override
     public ResponseEntity<AccountDto> getAccountById(@PathVariable int id)throws Exception{
-        return accountService.getAccountById(id);
+        return iAccountService.getAccountById(id);
     }
 
     // http://localhost:8080/api/account/save
     @Override
     public ResponseEntity<AccountDto> saveAccount(@RequestBody  AccountDto accountDto) throws Exception {
-        return accountService.saveAccount(accountDto);
+        return iAccountService.saveAccount(accountDto);
     }
 
     // http://localhost:8080/api/account/update/{id}
     @Override
     public ResponseEntity<AccountDto> updateAccount(@RequestBody AccountDto accountDto,int id) throws Exception {
-        return accountService.updateAccount(accountDto,id);
+        return iAccountService.updateAccount(accountDto,id);
     }
 
     // http://localhost:8080/api/account/delete/{id}
     @Override
     public ResponseEntity<AccountDto> deleteAccount(@PathVariable int id) throws Exception {
-        return accountService.deleteAccount(id);
+        return iAccountService.deleteAccount(id);
+    }
+
+    // http://localhost:8080/api/account
+    @Override
+    public ResponseEntity<AccountDto> getAccountByTcNo(@RequestParam String tcNo) throws Exception {
+        return iAccountService.getAccountByTcNo(tcNo);
     }
 
 }

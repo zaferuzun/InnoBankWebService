@@ -50,6 +50,12 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
+    public ResponseEntity<AccountDto> getAccountByTcNo(String tcNo) {
+        AccountEntity accountEntity= iAccountRepository.getAccountEntityByTcNo(tcNo);
+        return ResponseEntity.ok(EntityToDto(accountEntity));
+    }
+
+    @Override
     public ResponseEntity<AccountDto> deleteAccount(int id) {
         iAccountRepository.deleteById(id);
         return null;

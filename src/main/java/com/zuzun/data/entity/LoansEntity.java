@@ -40,6 +40,9 @@ public class LoansEntity {
     @Column(name = "approval")
     private Boolean approval;
 
+    @Column(name = "mortgage")
+    private Long mortgage;
+
     @Column(name = "created_date",nullable = false,updatable = false)
     @CreatedDate
     @CreationTimestamp

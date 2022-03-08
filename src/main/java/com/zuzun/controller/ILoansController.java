@@ -21,6 +21,6 @@ public interface ILoansController {
     ResponseEntity<LoansDto> deleteLoans (@PathVariable int id)throws Exception;
 
     @PostMapping("")
-    ResponseEntity<LoansDto> getLoansByAccountId(@PathVariable int id)
+    ResponseEntity<LoansDto> getLoansByAccountId(@RequestParam int id)
             throws Exception;
 }

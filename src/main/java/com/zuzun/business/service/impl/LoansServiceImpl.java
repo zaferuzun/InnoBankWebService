@@ -52,6 +52,7 @@ public class LoansServiceImpl implements ILoansService {
         LoansModel loansModel = loansCalculated(loansDto.getType(),loansDto.getLoansParameterModel());
         loansEntity.setAmount((long) loansModel.getLoansLimit());
         loansEntity.setApproval(loansModel.getLoansStatus());
+        loansEntity.setMortgage(loansDto.getLoansParameterModel().getMortgage());
 
         iLoansRepository.save(loansEntity);
 
@@ -82,6 +83,11 @@ public class LoansServiceImpl implements ILoansService {
     @Override
     public LoansDto EntityToDto(LoansEntity loansEntity) {
         LoansDto loansDto = modelMapper.map(loansEntity, LoansDto.class);
+        if(loansEntity.getMortgage()!=null)
+        {
+            LoansParameterModel loansParameterModel = LoansParameterModel.builder().mortgage(loansEntity.getMortgage()).build();
+            loansDto.setLoansParameterModel(loansParameterModel);
+        }
         return loansDto;
     }
 

@@ -12,7 +12,7 @@ public class CarLoansService implements ICarLoans {
     public LoansModel getLoansCalculation(LoansParameterModel loansParameterModel) throws Exception {
         int accountScore=loansParameterModel.getAccountScore();
         double accountSalary= loansParameterModel.getAccountSalary();
-        double mortgage = loansParameterModel.getMortgage();
+        long mortgage = loansParameterModel.getMortgage();
 
         if(accountScore<500)
         {
